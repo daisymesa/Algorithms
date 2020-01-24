@@ -8,10 +8,29 @@ import argparse
 
 
 def find_max_profit(prices):
-    pass
+    # price list must have at least two prices in it
+    if (len(prices) <= 1):
+        return None
+
+    else:
+        # find best price to sell stocks
+        selling_price = max(prices)
+        # list of prices at which stocks can be bought (prices before the best price)
+        buy_choices = prices[0:prices.index(selling_price)]
+        # find the lowest price in from the buy_choices prices
+        buying_price = min(buy_choices)
+
+        # diff btw selling_price and buying_price
+        max_profit = selling_price - buying_price
+
+        # print("highest price: ", selling_price)
+        # print("buy choices: ", buy_choices)
+        # print("buying price: ", buying_price)
 
     return max_profit
 
+
+print(find_max_profit([1050, 270, 1540, 3800, 2]))
 
 if __name__ == '__main__':
     # This is just some code to accept inputs from the command line
