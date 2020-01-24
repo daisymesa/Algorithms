@@ -15,7 +15,7 @@ def find_max_profit(prices):
     else:
         # find best price to sell stocks
         selling_price = max(prices)
-        # list of prices at which stocks can be bought (prices before the best price)
+        # list of prices at which stocks can be bought (prices before the best price to sell)
         buy_choices = prices[0:prices.index(selling_price)]
         # find the lowest price in from the buy_choices prices
         buying_price = min(buy_choices)
